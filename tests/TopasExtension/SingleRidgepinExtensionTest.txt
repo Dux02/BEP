@@ -1,0 +1,28 @@
+
+#Defining the world around the ridge with air in it
+s:Ge/Ridgefilter/Material  = "Air"
+s:Ge/Ridgefilter/Type = "TsBox"
+d:Ge/Ridgefilter/HLX       = 20.0 cm
+d:Ge/Ridgefilter/HLY       = 20.0 cm
+d:Ge/Ridgefilter/HLZ       = 4.0 cm
+s:Ge/Ridgefilter/parent = "World"
+
+#Defining single ridge pin
+s:Ge/RidgePin/Parent = "Ridgefilter"
+s:Ge/RidgePin/Material= "G4_WATER"
+s:Ge/RidgePin/Type = "TsRidgepin"
+s:Ge/RidgePin/DrawingStyle = "Solid"
+d:Ge/Ridgepin/RidgepinMaxHeight = 30 mm
+d:Ge/Ridgepin/RidgepinSpacing = 3 mm
+dv:Ge/Ridgepin/RidgepinWidths =5 3.0 2.5 2.0 1.5 1.2 mm
+i:ge/Ridgepin/RidgepinElements = 5
+i:Ge/Ridgepin/RidgeFilterNumberOfPinsX = 2
+i:Ge/Ridgepin/RidgeFilterNumberOfPinsY = 2
+d:Ge/Ridgepin/RidgeFilterBaseHeight = 5 mm
+d:Ge/RidgePin/RidgepinBaseWidth = 3 mm
+
+#Graphics bit
+s:Gr/ViewA/Type              = "OpenGL"
+b:Gr/ViewA/IncludeAxes = "False"
+d:Gr/ViewA/AxesSize = 4. cm
+Ts/UseQt = "True"

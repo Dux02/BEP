@@ -1,0 +1,66 @@
+
+#Alle files includen
+includeFile = /home/dabouwer/tests/codetorun/topas_included_files/measurementBox.txt #water box
+includeFile = /home/dabouwer/tests/codetorun/topas_included_files/particleBeam.txt #Particle beam 
+includeFile = /home/dabouwer/tests/codetorun/ridgepins/ridgepins_main.txt #Ridgefilter
+#includeFile = /home/dabouwer/tests/codetorun/deprecated_code/ridgeFilter.txt #RF from cad
+
+# Shows used physics settings
+# b:Ph/ListProcesses = "True" 
+
+#Define a world of 1m^3
+s:Ge/World/Material  = "Air"
+d:Ge/World/HLX       = 1.0 m
+d:Ge/World/HLY       = 1.0 m
+d:Ge/World/HLZ       = 1.0 m
+Ge/CheckForOverlaps = "False"
+
+
+#Parameters van de proton straal
+s:Ge/beamBox/parent = "World"
+d:ge/beambox/transz = 0.5 m
+d:ge/particlebeam/transz = 0.5 m
+s:ge/beambox/color = "orange"
+i:Ts/ShowHistoryCountAtInterval = 10000
+i:So/particlebeam/NumberOfHistoriesInRun = 100000
+i:Ts/NumberOfThreads = -1
+b:Ts/IncludeTimeInHistoryCount = "True" # Adds time stamp to history count
+i:Ts/MaxInterruptedHistories = 100 # limit on how many histories can throw rare Geant4 errors
+
+
+
+#Parameters measurement box
+s:Sc/DoseAtWaterbox/IfOutputFileAlreadyExists = "Overwrite"
+s:sc/doseatwaterbox/outputtype	="csv"
+s:sc/doseatewaterbox/outputfile= "../Results/Test"
+s:Ge/waterBox/parent = "World"
+s:ge/Waterbox/color 	= "blue"
+i:Ge/WaterBox/XBins             = 1
+i:Ge/WaterBox/YBins             = 1
+i:Ge/WaterBox/ZBins             = 100
+
+#Parameters voor ridgefilter
+s:Ge/World_RF/parent = "World"
+d:Ge/World_RF/transz= 0.25 m
+
+#Parameters voor rf HPTC
+#s:Ge/CADVolumeStl/parent = "World"
+#d:ge/CADVOLUMESTL/transz = 0.25 m
+
+#This is a replacement for when not wanting to load the ridgefilter
+#s:Ge/RidgefilterReplacement/parent = "World"
+#s:Ge/RidgeFilterreplacement/type = "TsBox"
+#d:Ge/RidgefilterReplacement/transz = 24  cm
+#d:ge/RidgefilterReplacement/HLX = 33 mm
+#d:ge/RidgefilterReplacement/HLY = ge/RidgefilterReplacement/HLX mm
+#d:ge/RidgefilterReplacement/HLZ = 2.5 mm
+#s:ge/ridgefilterreplacement/drawingstyle = "WireFrame"
+#s:ge/RidgefilterReplacement/color = "yellow"
+#s:ge/ridgefilterReplacement/material = "G4_WATER"
+
+
+#Graphics
+#s:Gr/ViewA/Type              = "OpenGL"
+#b:Gr/ViewA/IncludeAxes = "True"
+#d:Gr/ViewA/AxesSize = 1. m
+#Ts/UseQt = "True"

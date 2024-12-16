@@ -1,0 +1,36 @@
+# Ridge Filter Pin Configuration
+# Total HLZ: 35 mm
+# Material: G4_WATER
+# HLX values: [2.78265827 2.54505245 2.45149141 2.4510019  2.31710704 2.14388901
+ 2.05234522 2.04115263 1.90546782 1.90546782 1.68038634 1.68038634
+ 1.68038634 1.54036703 1.50233022 1.36114093 1.23339474 1.22123713
+ 1.08810783 0.97173558 0.9677968  0.82634314 0.80287723 0.7817741
+ 0.77217536 0.556866   0.556866   0.25540496 0.25540496 0.09838868]
+# HLZ value for each layer: 1.0 mm
+# Number of ridgepins in the x direction: 33
+# Number of ridgepins in the y direction: 33
+
+# Define a world
+s:Ge/World_RF/Material  = "Air"
+d:Ge/World_RF/HLX       = 431.31089118918965 mm
+d:Ge/World_RF/HLY       = 431.31089118918965 mm
+d:Ge/World_RF/HLZ       = 60 mm
+s:ge/World_RF/Type = "TsBox"
+
+# Define the RF using geometry component
+s:Ge/RidgePin/Parent = "World_RF"
+s:Ge/RidgePin/Material= "G4_WATER"
+s:Ge/RidgePin/Type = "TsRidgepin"
+s:Ge/RidgePin/DrawingStyle = "Solid"
+d:Ge/Ridgepin/RidgepinMaxHeight = 30 mm
+d:Ge/Ridgepin/RidgepinSpacing = 1 mm
+dv:Ge/Ridgepin/RidgepinWidths = 30 2.78265826658477 2.5450524487875503 2.451491410761748 2.451001897172074 2.3171070362015387 2.1438890081624415 2.0523452241566873 2.041152628699061 1.9054678176502011 1.9054678176502011 1.6803863382339483 1.6803863382339483 1.6803863382339483 1.5403670304698842 1.5023302157024985 1.3611409263735084 1.233394744640381 1.2212371257871415 1.0881078251106406 0.9717355828255686 0.9677967984538488 0.8263431418714002 0.8028772341410402 0.7817740969081107 0.7721753641018617 0.5568659983112927 0.5568659983112927 0.25540495672157304 0.25540495672157304 0.09838867864477918 mm
+i:ge/Ridgepin/RidgepinElements = 30
+i:Ge/Ridgepin/RidgeFilterNumberOfPinsX = 33
+i:Ge/Ridgepin/RidgeFilterNumberOfPinsY = 33
+d:Ge/Ridgepin/RidgeFilterBaseHeight = 5 mm
+d:Ge/RidgePin/RidgepinBaseWidth = 2.78265826658477 mm
+s:Ge/RidgePin/WorldLog/Material= "Air"
+s:Ge/RidgePin/baseLayerLog/Material = "G4_WATER"
+s:Ge/RidgePin/ridgepinLog/Material = "G4_WATER"
+

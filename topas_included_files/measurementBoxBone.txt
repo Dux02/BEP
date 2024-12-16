@@ -1,0 +1,48 @@
+includeFile = /home/dabouwer/topas/examples/MVLinac/LinacDefaults.txt #Values in LinacDafaults.txt may be overridden
+
+sv:Ma/Bone/components = 9 "Hydrogen" "Carbon" "Nitrogen" "Oxygen" "Sodium" "Magnesium" "Phosphorus" "Sulfur" "Calcium"
+uv:Ma/Bone/fractions = 9 0.036 0.159 0.042 0.448 0.003 0.002 0.094 0.003 0.213
+d:Ma/Bone/Density = 1.920 g/cm3
+d:Ma/Bone/MeanExcitationEnergy=106.4 eV
+s:Ma/Bone/DefaultColor= "Yellow"
+s:Ph/ListName = "Default"
+sv:Ph/Parallel/LayeredMassGeometryWorlds = 2 "Water" "Bone"
+
+s:Ge/WaterBox/Parent            = "World"
+s:Ge/WaterBox/Type              = "TsBox"
+s:Ge/WaterBox/Material         = "G4_WATER"
+d:Ge/WaterBox/HLX               = 10. cm 
+d:Ge/WaterBox/HLY               = 10. cm 
+d:Ge/WaterBox/HLZ               = 10. cm 
+i:Ge/WaterBox/XBins             = 1
+i:Ge/WaterBox/YBins             = 2 # EVEN CHECKEN DAT DIT DE GOEDE DIRECTIE IIS
+i:Ge/WaterBox/ZBins             = 100
+includeFile           = /home/dabouwer/tests/codetorun/topas_included_files/VoxelMaterials.txt
+d:ge/waterbox/rotz = 180. deg
+s:Ge/WaterBox/DrawingStyle     = "WireFrame"
+s:Ge/WaterBox/Color             = "blue"
+b:Sc/Waterbox/PropagateToChildren = "True"
+
+#s:Ge/bonePiece/parent = "WaterBox"
+#s:Ge/bonePiece/Type              = "TsBox"
+#s:Ge/bonePiece/Material         = "Bone"
+#d:Ge/bonePiece/HLX               = 10. cm 
+#d:Ge/bonePiece/HLY               = 5. cm 
+#d:Ge/bonePiece/HLZ               = 2. mm 
+#i:Ge/bonePiece/XBins             = 1
+#i:Ge/bonePiece/YBins             = 1 # EVEN CHECKEN DAT DIT DE GOEDE DIRECTIE IIS
+#i:Ge/bonePiece/ZBins             = 1
+#d:Ge/bonePiece/TransZ           = 0. cm 
+#d:Ge/bonePiece/TransY           = 10. cm 
+#d:Ge/bonePiece/TransX           = 0. cm 
+#b:Ge/bonePiece/IsParallel = "True"
+
+
+s:sc/DoseAtWaterbox/Quantity	              = "DoseToMedium"
+s:Sc/DoseAtWaterbox/component   	      = "Waterbox"
+b:Sc/DoseAtWaterbox/outputtoconsole   	      = "true"
+s:Sc/DoseAtWaterbox/IfOutputFileAlreadyExists = "Overwrite"
+sv:Sc/DoseAtWaterbox/Report                   = 1 "Sum" 
+#i:Sc/DoseAtWaterbox/HistogramBins             = 100
+#d:Sc/DoseAtWaterbox/HistogramMin              = 0. Gy
+#d:Sc/DoseAtWaterbox/HistogramMax              = .0001 Gy

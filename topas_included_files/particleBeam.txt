@@ -1,0 +1,36 @@
+#Define a box from where the beam comes so that is more visible
+
+s:Ge/BeamBox/Type = "TsBox"
+d:Ge/BeamBox/HLX = 5 cm
+d:GE/Beambox/HLY = 5 cm
+d:ge/Beambox/HLZ = 5 cm
+s:ge/beambox/drawingstyle = "Solid"
+s:ge/beambox/color = "orange"
+s:ge/beambox/material = "Vacuum"
+
+
+s:So/particleBeam/parent 			= "BeamBox"
+s:So/particleBeam/Type                     	= "Beam"
+s:So/particleBeam/Component                	= "BeamPosition"
+sc:So/particleBeam/BeamParticle             	= "proton"
+dc:So/particleBeam/BeamEnergy               	= 150 MeV
+u:So/particleBeam/BeamEnergySpread    		= 0.757504
+s:So/particleBeam/BeamPositionDistribution	 = "Flat"
+s:So/particleBeam/BeamPositionCutoffShape  	= "Ellipse"
+d:So/particleBeam/BeamPositionCutoffX      	= 3 cm
+d:So/particleBeam/BeamPositionCutoffY      	= 3 cm
+s:So/particleBeam/BeamAngularDistribution  	= "Gaussian"
+d:So/particleBeam/BeamAngularCutoffX       	= 90. deg
+d:So/particleBeam/BeamAngularCutoffY       	= 90. deg
+d:So/particleBeam/BeamAngularSpreadX       	= 0.0032 rad
+d:So/particleBeam/BeamAngularSpreadY       	= 0.0032 rad
+i:So/particleBeam/NumberOfHistoriesInRun   	= 10000
+
+dc:so/particleBeam/rotz = 0. deg
+dc:so/particlebeam/roty = 0. deg
+dc:so/particlebeam/rotx = 0. deg
+dc:so/particlebeam/transx = 0 cm
+dc:so/particlebeam/transy = 0 cm
+dc:so/particlebeam/transz = 0 cm
+
+
